@@ -53,44 +53,44 @@ PLANTS = {
 # =============================================================================
 CUSTOM_CSS = """
 <style>
-    .stApp { background-color: #0a0f1a; }
-    .main-header { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0; border-bottom: 1px solid #374151; margin-bottom: 2rem; }
+    .stApp { background-color: #ffffff; }
+    .main-header { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0; border-bottom: 2px solid #e2e8f0; margin-bottom: 2rem; }
     .header-left { display: flex; align-items: center; gap: 1.5rem; }
     .logo { width: 64px; height: 64px; background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; box-shadow: 0 4px 20px rgba(245, 158, 11, 0.3); }
-    .header-subtitle { color: #94a3b8; font-size: 16px; display: flex; align-items: center; gap: 10px; }
+    .header-subtitle { color: #64748b; font-size: 16px; display: flex; align-items: center; gap: 10px; }
     .live-dot { width: 10px; height: 10px; background: #10b981; border-radius: 50%; animation: pulse 2s infinite; }
     @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
-    .date-big { font-size: 38px; font-weight: 700; color: #f8fafc; }
+    .date-big { font-size: 38px; font-weight: 700; color: #0f172a; }
     .date-month { color: #f59e0b; }
-    .timestamp { font-size: 14px; color: #f8fafc; }
+    .timestamp { font-size: 14px; color: #475569; }
     .kpi-container { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.25rem; margin-bottom: 2rem; }
-    .kpi-card { background: linear-gradient(135deg, #1a2234 0%, #1e293b 100%); border: 1px solid #374151; border-radius: 14px; padding: 1.5rem; text-align: center; }
-    .kpi-card.highlight { background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.3); }
-    .kpi-label { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: #f8fafc; margin-bottom: 10px; }
-    .kpi-value { font-size: 34px; font-weight: 700; color: #f8fafc; line-height: 1; }
+    .kpi-card { background: #ffffff; border: 2px solid #e2e8f0; border-radius: 14px; padding: 1.5rem; text-align: center; }
+    .kpi-card.highlight { background: rgba(245, 158, 11, 0.05); border-color: #f59e0b; }
+    .kpi-label { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: #64748b; margin-bottom: 10px; }
+    .kpi-value { font-size: 34px; font-weight: 700; color: #0f172a; line-height: 1; }
     .kpi-value.positive { color: #10b981; }
     .kpi-value.warning { color: #f59e0b; }
     .kpi-value.negative { color: #ef4444; }
-    .kpi-unit { font-size: 14px; color: #f8fafc; margin-top: 6px; }
+    .kpi-unit { font-size: 14px; color: #475569; margin-top: 6px; }
     .kpi-delta { font-size: 13px; margin-top: 10px; padding: 3px 10px; border-radius: 6px; display: inline-block; }
-    .kpi-delta.up { background: rgba(16, 185, 129, 0.15); color: #10b981; }
-    .kpi-delta.down { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
-    .kpi-delta.neutral { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
-    .facility-card { background: rgba(0,0,0,0.2); border-radius: 14px; padding: 1.5rem; border: 1px solid transparent; transition: all 0.3s ease; }
-    .facility-card:hover { border-color: #f59e0b; background: rgba(245, 158, 11, 0.05); }
+    .kpi-delta.up { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+    .kpi-delta.down { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
+    .kpi-delta.neutral { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+    .facility-card { background: #ffffff; border-radius: 14px; padding: 1.5rem; border: 2px solid #e2e8f0; transition: all 0.3s ease; }
+    .facility-card:hover { border-color: #f59e0b; background: rgba(245, 158, 11, 0.02); }
     .facility-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; }
-    .facility-name { font-weight: 600; font-size: 18px; color: #f8fafc; }
-    .facility-badge { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
-    .metric-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
-    .metric-label { font-size: 15px; color: #f8fafc; }
-    .metric-value { font-weight: 600; font-size: 16px; color: #f8fafc; }
+    .facility-name { font-weight: 600; font-size: 18px; color: #0f172a; }
+    .facility-badge { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+    .metric-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #e2e8f0; }
+    .metric-label { font-size: 15px; color: #475569; }
+    .metric-value { font-weight: 600; font-size: 16px; color: #0f172a; }
     .price-panel { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1.5rem; }
-    .price-card { background: rgba(0,0,0,0.2); border-radius: 10px; padding: 1rem; text-align: center; }
-    .price-label { font-size: 12px; color: #f8fafc; margin-bottom: 6px; }
+    .price-card { background: #ffffff; border-radius: 10px; padding: 1rem; text-align: center; }
+    .price-label { font-size: 12px; color: #64748b; margin-bottom: 6px; }
     .price-value { font-size: 22px; font-weight: 700; font-family: monospace; }
-    .price-subtext { font-size: 11px; color: #f8fafc; margin-top: 4px; }
+    .price-subtext { font-size: 11px; color: #64748b; margin-top: 4px; }
     .gcp-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(66, 133, 244, 0.15); color: #4285f4; padding: 5px 14px; border-radius: 20px; font-size: 12px; }
-    .section-title { font-size: 22px; font-weight: 600; color: #f8fafc; margin-bottom: 1rem; }
+    .section-title { font-size: 22px; font-weight: 600; color: #0f172a; margin-bottom: 1rem; }
     #MainMenu {visibility: hidden;} footer {visibility: hidden;} header {visibility: hidden;}
     @media (max-width: 1200px) { .kpi-container { grid-template-columns: repeat(3, 1fr); } }
     @media (max-width: 768px) { .kpi-container { grid-template-columns: repeat(2, 1fr); } }
@@ -788,12 +788,16 @@ def get_ytd_performance_ratio(_client, spreadsheet_id: str):
             'aura_iii': {'months': [], '2025': [], '2026': []}
         }
         
-        # Read Aura I PR (rows 11-25, indices 10-24) - solo primeros 12
-        for idx, row in enumerate(all_values[10:22]):  # Cambié 25 por 22 para solo 12 meses
-            if len(row) > 25:
-                month = str(row[23]).strip()
-                if month and month != 'Mes' and month.lower() not in ['total', 'promedio', 'suma']:
-                    pr_data['aura_i']['months'].append(month)
+        # Read Aura I PR - FORZAR 12 MESES
+        month_names = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+                       'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
+        
+        for idx in range(12):
+            pr_data['aura_i']['months'].append(month_names[idx])
+            
+            if 10 + idx < len(all_values):
+                row = all_values[10 + idx]
+                if len(row) > 25:
                     
                     # 2025 - Columna Z (índice 25)
                     val_2025 = str(row[25]).replace('%', '').replace(',', '.').strip()
@@ -808,13 +812,18 @@ def get_ytd_performance_ratio(_client, spreadsheet_id: str):
                         pr_data['aura_i']['2026'].append(float(val_2026) if val_2026 and val_2026 != '' else None)
                     except:
                         pr_data['aura_i']['2026'].append(None)
+            else:
+                # Si no hay fila, agregar None
+                pr_data['aura_i']['2025'].append(None)
+                pr_data['aura_i']['2026'].append(None)
         
-        # Read Aura III PR (rows 50-64, indices 49-63) - solo primeros 12
-        for idx, row in enumerate(all_values[49:61]):  # Cambié 64 por 61 para solo 12 meses
-            if len(row) > 25:
-                month = str(row[23]).strip()
-                if month and month != 'Mes' and month.lower() not in ['total', 'promedio', 'suma']:
-                    pr_data['aura_iii']['months'].append(month)
+        # Read Aura III PR - FORZAR 12 MESES
+        for idx in range(12):
+            pr_data['aura_iii']['months'].append(month_names[idx])
+            
+            if 49 + idx < len(all_values):
+                row = all_values[49 + idx]
+                if len(row) > 25:
                     
                     # 2025 - Columna Z (índice 25)
                     val_2025 = str(row[25]).replace('%', '').replace(',', '.').strip()
@@ -829,6 +838,10 @@ def get_ytd_performance_ratio(_client, spreadsheet_id: str):
                         pr_data['aura_iii']['2026'].append(float(val_2026) if val_2026 and val_2026 != '' else None)
                     except:
                         pr_data['aura_iii']['2026'].append(None)
+            else:
+                # Si no hay fila, agregar None
+                pr_data['aura_iii']['2025'].append(None)
+                pr_data['aura_iii']['2026'].append(None)
         
         return pr_data
         
@@ -874,12 +887,16 @@ def get_ytd_budget_vs_real(_client, spreadsheet_id: str):
             }
         }
         
-        # Read Aura I (rows 11-22, indices 10-21) - solo 12 meses
-        for row in all_values[10:22]:
-            if len(row) > 21:
-                month = str(row[3]).strip()
-                if month and month != 'Mes' and month.lower() not in ['total', 'promedio', 'suma', '2026']:
-                    data['aura_i']['months'].append(month)
+        # Read Aura I - FORZAR 12 MESES
+        month_names = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+                       'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
+        
+        for idx in range(12):
+            data['aura_i']['months'].append(month_names[idx])
+            
+            if 10 + idx < len(all_values):
+                row = all_values[10 + idx]
+                if len(row) > 21:
                     
                     # Real - Producción TOTAL (MWh/m) col E (4)
                     real_prod = str(row[4]).replace(',', '').strip()
@@ -922,13 +939,22 @@ def get_ytd_budget_vs_real(_client, spreadsheet_id: str):
                         data['aura_i']['budget']['ingreso'].append(float(budget_ingreso) if budget_ingreso and budget_ingreso != '' else 0)
                     except:
                         data['aura_i']['budget']['ingreso'].append(0)
+            else:
+                # Si no hay fila, agregar ceros
+                data['aura_i']['real']['produccion_mwh'].append(0)
+                data['aura_i']['real']['precio'].append(0)
+                data['aura_i']['real']['ingreso'].append(0)
+                data['aura_i']['budget']['produccion_mwh'].append(0)
+                data['aura_i']['budget']['precio'].append(0)
+                data['aura_i']['budget']['ingreso'].append(0)
         
-        # Read Aura III (rows 50-61, indices 49-60) - solo 12 meses
-        for row in all_values[49:61]:
-            if len(row) > 21:
-                month = str(row[3]).strip()
-                if month and month != 'Mes' and month.lower() not in ['total', 'promedio', 'suma', '2026']:
-                    data['aura_iii']['months'].append(month)
+        # Read Aura III - FORZAR 12 MESES
+        for idx in range(12):
+            data['aura_iii']['months'].append(month_names[idx])
+            
+            if 49 + idx < len(all_values):
+                row = all_values[49 + idx]
+                if len(row) > 21:
                     
                     # Real - Producción TOTAL col E (4)
                     real_prod = str(row[4]).replace(',', '').strip()
@@ -967,6 +993,14 @@ def get_ytd_budget_vs_real(_client, spreadsheet_id: str):
                         data['aura_iii']['budget']['ingreso'].append(float(budget_ingreso) if budget_ingreso and budget_ingreso != '' else 0)
                     except:
                         data['aura_iii']['budget']['ingreso'].append(0)
+            else:
+                # Si no hay fila, agregar ceros
+                data['aura_iii']['real']['produccion_mwh'].append(0)
+                data['aura_iii']['real']['precio'].append(0)
+                data['aura_iii']['real']['ingreso'].append(0)
+                data['aura_iii']['budget']['produccion_mwh'].append(0)
+                data['aura_iii']['budget']['precio'].append(0)
+                data['aura_iii']['budget']['ingreso'].append(0)
         
         return data
         
@@ -1304,10 +1338,10 @@ def create_generation_chart(hourly, monthly_max=None, plant_view="Ambas plantas"
                     mode='lines', showlegend=True
                 ))
     
-    fig.update_layout(template='plotly_dark', paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', height=450,
+    fig.update_layout(template='plotly_white', paper_bgcolor='#ffffff', plot_bgcolor='#ffffff', height=450,
         margin=dict(l=60, r=40, t=40, b=60), legend=dict(orientation='h', yanchor='bottom', y=1.02, xanchor='center', x=0.5, font=dict(size=14, color='#f8fafc')),
-        xaxis=dict(title=dict(text='Hora', font=dict(size=16)), gridcolor='rgba(55, 65, 81, 0.5)', tickvals=list(range(6, 19)), ticktext=[f'{h}:00' for h in range(6, 19)], tickfont=dict(size=14)),
-        yaxis=dict(title=dict(text='MW', font=dict(size=16)), gridcolor='rgba(55, 65, 81, 0.5)', tickfont=dict(size=14)), hovermode='x unified')
+        xaxis=dict(title=dict(text='Hora', font=dict(size=16)), gridcolor='rgba(226, 232, 240, 0.8)', tickvals=list(range(6, 19)), ticktext=[f'{h}:00' for h in range(6, 19)], tickfont=dict(size=14, color='#1e293b')),
+        yaxis=dict(title=dict(text='MW', font=dict(size=16)), gridcolor='rgba(226, 232, 240, 0.8)', tickfont=dict(size=14, color='#1e293b')), hovermode='x unified')
     return fig
 
 def create_price_chart(hourly, facility='aura_i'):
@@ -1331,11 +1365,11 @@ def create_price_chart(hourly, facility='aura_i'):
     fig.add_trace(go.Scatter(x=df['hour'], y=df['spread'], name='Spread %', line=dict(color='#ef4444', width=2, dash='dot'), mode='lines+markers', marker=dict(size=6)), secondary_y=True)
     fig.add_hline(y=0, line_dash='dash', line_color='rgba(255,255,255,0.3)', secondary_y=True)
     
-    fig.update_layout(template='plotly_dark', paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', height=350,
-        margin=dict(l=60, r=60, t=40, b=60), legend=dict(orientation='h', yanchor='bottom', y=1.02, xanchor='center', x=0.5, font=dict(size=13, color='#f8fafc')),
-        xaxis=dict(gridcolor='rgba(55, 65, 81, 0.5)', tickfont=dict(size=13), title=dict(text='Hora', font=dict(size=14))), hovermode='x unified')
-    fig.update_yaxes(title_text="PML (MX$/MWh)", tickformat='$,.0f', gridcolor='rgba(55, 65, 81, 0.5)', tickfont=dict(size=13), title_font=dict(size=14), secondary_y=False)
-    fig.update_yaxes(title_text="Spread %", tickformat='.1f', tickfont=dict(size=13), title_font=dict(size=14), secondary_y=True)
+    fig.update_layout(template='plotly_white', paper_bgcolor='#ffffff', plot_bgcolor='#ffffff', height=350,
+        margin=dict(l=60, r=60, t=40, b=60), legend=dict(orientation='h', yanchor='bottom', y=1.02, xanchor='center', x=0.5, font=dict(size=13, color='#1e293b')),
+        xaxis=dict(gridcolor='rgba(226, 232, 240, 0.8)', tickfont=dict(size=13, color='#1e293b'), title=dict(text='Hora', font=dict(size=14))), hovermode='x unified')
+    fig.update_yaxes(title_text="PML (MX$/MWh)", tickformat='$,.0f', gridcolor='rgba(226, 232, 240, 0.8)', tickfont=dict(size=13, color='#1e293b'), title_font=dict(size=14, color='#1e293b'), secondary_y=False)
+    fig.update_yaxes(title_text="Spread %", tickformat='.1f', tickfont=dict(size=13, color='#1e293b'), title_font=dict(size=14, color='#1e293b'), secondary_y=True)
     return fig
 
 def create_weekly_chart(weekly):
@@ -1345,10 +1379,10 @@ def create_weekly_chart(weekly):
     if 'aura_iii' in df.columns:
         fig.add_trace(go.Bar(x=df['date'], y=df['aura_iii'], name='Aura III', marker_color='rgba(16, 185, 129, 0.8)'))
     
-    fig.update_layout(template='plotly_dark', paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', height=400,
-        margin=dict(l=60, r=40, t=40, b=60), legend=dict(orientation='h', yanchor='bottom', y=1.02, xanchor='center', x=0.5, font=dict(size=14, color='#f8fafc')),
-        xaxis=dict(gridcolor='rgba(55, 65, 81, 0.5)', tickfont=dict(size=13, color='#f8fafc')),
-        yaxis=dict(title=dict(text='MWh', font=dict(size=16)), gridcolor='rgba(55, 65, 81, 0.5)', tickfont=dict(size=14)), barmode='group')
+    fig.update_layout(template='plotly_white', paper_bgcolor='#ffffff', plot_bgcolor='#ffffff', height=400,
+        margin=dict(l=60, r=40, t=40, b=60), legend=dict(orientation='h', yanchor='bottom', y=1.02, xanchor='center', x=0.5, font=dict(size=14, color='#1e293b')),
+        xaxis=dict(gridcolor='rgba(226, 232, 240, 0.8)', tickfont=dict(size=13, color='#1e293b'), title=dict(font=dict(color='#1e293b'))),
+        yaxis=dict(title=dict(text='MWh', font=dict(size=16, color='#1e293b')), gridcolor='rgba(226, 232, 240, 0.8)', tickfont=dict(size=14, color='#1e293b')), barmode='group')
     return fig
 
 
@@ -1407,9 +1441,9 @@ def create_pmls_bcs_chart(pmls_data):
     
     # Update layout
     fig.update_layout(
-        template='plotly_dark',
-        paper_bgcolor='rgba(0,0,0,0)',
-        plot_bgcolor='rgba(0,0,0,0)',
+        template='plotly_white',
+        paper_bgcolor='#ffffff',
+        plot_bgcolor='#ffffff',
         height=350,
         margin=dict(l=60, r=60, t=40, b=60),
         legend=dict(
@@ -1418,11 +1452,11 @@ def create_pmls_bcs_chart(pmls_data):
             y=1.02,
             xanchor='center',
             x=0.5,
-            font=dict(size=13, color='#f8fafc')
+            font=dict(size=13, color='#1e293b')
         ),
         xaxis=dict(
-            gridcolor='rgba(55, 65, 81, 0.5)',
-            tickfont=dict(size=12, color='#f8fafc'),
+            gridcolor='rgba(226, 232, 240, 0.8)',
+            tickfont=dict(size=12, color='#1e293b'),
             tickangle=-45
         ),
         hovermode='x unified'
@@ -1432,17 +1466,17 @@ def create_pmls_bcs_chart(pmls_data):
     fig.update_yaxes(
         title_text="PML / Congestión (MX$/MWh)",
         tickformat='$,.0f',
-        gridcolor='rgba(55, 65, 81, 0.5)',
-        tickfont=dict(size=13),
-        title_font=dict(size=14),
+        gridcolor='rgba(226, 232, 240, 0.8)',
+        tickfont=dict(size=13, color='#1e293b'),
+        title_font=dict(size=14, color='#1e293b'),
         secondary_y=False
     )
     
     fig.update_yaxes(
         title_text="Gen. New Fortress (MWh)",
         tickformat=',.0f',
-        tickfont=dict(size=13),
-        title_font=dict(size=14),
+        tickfont=dict(size=13, color='#1e293b'),
+        title_font=dict(size=14, color='#1e293b'),
         secondary_y=True
     )
     
@@ -1480,9 +1514,9 @@ def create_pr_chart(pr_data, plant_name):
     ))
     
     fig.update_layout(
-        template='plotly_dark',
-        paper_bgcolor='rgba(0,0,0,0)',
-        plot_bgcolor='rgba(0,0,0,0)',
+        template='plotly_white',
+        paper_bgcolor='#ffffff',
+        plot_bgcolor='#ffffff',
         height=350,
         margin=dict(l=60, r=40, t=40, b=60),
         hovermode='x unified',
@@ -1493,7 +1527,7 @@ def create_pr_chart(pr_data, plant_name):
             y=1.02,
             xanchor="center",
             x=0.5,
-            font=dict(color='#f8fafc', size=13)
+            font=dict(color='#1e293b', size=13)
         )
     )
     
@@ -1501,17 +1535,17 @@ def create_pr_chart(pr_data, plant_name):
         title=None,
         showgrid=True,
         gridwidth=1,
-        gridcolor='rgba(255,255,255,0.1)',
-        tickfont=dict(color='#f8fafc', size=12)
+        gridcolor='rgba(226, 232, 240, 0.5)',
+        tickfont=dict(color='#1e293b', size=12)
     )
     
     fig.update_yaxes(
         title_text="Performance Ratio (%)",
-        title_font=dict(color='#f8fafc', size=13),
+        title_font=dict(color='#1e293b', size=13),
         showgrid=True,
         gridwidth=1,
-        gridcolor='rgba(255,255,255,0.1)',
-        tickfont=dict(color='#f8fafc', size=12),
+        gridcolor='rgba(226, 232, 240, 0.5)',
+        tickfont=dict(color='#1e293b', size=12),
         range=[40, 100]
     )
     
@@ -1569,9 +1603,9 @@ def create_budget_vs_real_chart(ytd_data, plant_name, metric):
     ))
     
     fig.update_layout(
-        template='plotly_dark',
-        paper_bgcolor='rgba(0,0,0,0)',
-        plot_bgcolor='rgba(0,0,0,0)',
+        template='plotly_white',
+        paper_bgcolor='#ffffff',
+        plot_bgcolor='#ffffff',
         height=350,
         margin=dict(l=60, r=40, t=40, b=60),
         hovermode='x unified',
@@ -1582,7 +1616,7 @@ def create_budget_vs_real_chart(ytd_data, plant_name, metric):
             y=1.02,
             xanchor="center",
             x=0.5,
-            font=dict(color='#f8fafc', size=13)
+            font=dict(color='#1e293b', size=13)
         )
     )
     
@@ -1590,17 +1624,17 @@ def create_budget_vs_real_chart(ytd_data, plant_name, metric):
         title=None,
         showgrid=True,
         gridwidth=1,
-        gridcolor='rgba(255,255,255,0.1)',
-        tickfont=dict(color='#f8fafc', size=12)
+        gridcolor='rgba(226, 232, 240, 0.5)',
+        tickfont=dict(color='#1e293b', size=12)
     )
     
     fig.update_yaxes(
         title_text=y_title,
-        title_font=dict(color='#f8fafc', size=13),
+        title_font=dict(color='#1e293b', size=13),
         showgrid=True,
         gridwidth=1,
-        gridcolor='rgba(255,255,255,0.1)',
-        tickfont=dict(color='#f8fafc', size=12)
+        gridcolor='rgba(226, 232, 240, 0.5)',
+        tickfont=dict(color='#1e293b', size=12)
     )
     
     return fig
@@ -1612,6 +1646,378 @@ def create_budget_vs_real_chart(ytd_data, plant_name, metric):
 
 # =============================================================================
 # MAIN APPLICATION
+# =============================================================================
+# =============================================================================
+# NUEVAS FUNCIONES: DATOS DIARIOS ÚLTIMOS 30 DÍAS
+# =============================================================================
+
+@st.cache_data(ttl=300)  # Cache por 5 minutos
+def get_last_30_days_data(_client, spreadsheet_id: str, selected_date):
+    """
+    Lee datos diarios de últimos 30 días desde la hoja mensual actual.
+    Columnas: W26:AE53
+    - Columna W: Día (fila 26 = día 01, fila 27 = día 02, etc.)
+    - Columna X (índice 22): Precio Aura I
+    - Columna Y (índice 23): Precio Aura III  
+    - Columna Z (índice 24): Producción Aura I
+    - Columna AA (índice 25): Producción Aura III
+    - Columna AD (índice 28): Ingreso Aura I
+    - Columna AE (índice 29): Ingreso Aura III
+    """
+    try:
+        # Obtener el mes de la fecha seleccionada
+        month = selected_date.month
+        year = selected_date.year
+        sheet_name = MONTH_SHEETS[month]
+        
+        spreadsheet = _client.open_by_key(spreadsheet_id)
+        worksheet = spreadsheet.worksheet(sheet_name)
+        
+        # Leer todas las filas necesarias (filas 26-53 = días 01-28+)
+        all_values = worksheet.get_all_values()
+        
+        data = {
+            'dias': [],
+            'precios_ai': [],
+            'precios_aiii': [],
+            'produccion_ai': [],
+            'produccion_aiii': [],
+            'ingresos_ai': [],
+            'ingresos_aiii': [],
+            'tiene_mtr': []  # Para saber si el precio es MTR (diferente color)
+        }
+        
+        # Leer desde el día seleccionado hacia atrás, hasta 30 días
+        selected_day = selected_date.day
+        
+        # Recopilar últimos 30 días (o menos si no hay suficientes)
+        days_collected = []
+        for i in range(30):
+            day = selected_day - i
+            if day < 1:
+                # Si nos salimos del mes, detenerse
+                break
+            days_collected.insert(0, day)  # Insertar al inicio para mantener orden cronológico
+        
+        # Leer datos para cada día
+        for day in days_collected:
+            # Fila 26 (índice 25) = día 01
+            # Fila 27 (índice 26) = día 02, etc.
+            row_idx = 24 + day  # día 1 -> índice 25 (fila 26), día 2 -> índice 26 (fila 27)
+            
+            if row_idx < len(all_values):
+                row = all_values[row_idx]
+                
+                if len(row) > 30:  # Asegurar que la fila tiene todas las columnas
+                    # Agregar día
+                    data['dias'].append(f"{day:02d}")
+                    
+                    # Detectar si tiene MTR leyendo columna V (índice 21)
+                    # Columna V contiene "MTR" o "MDA"
+                    tipo_precio = str(row[21]).strip().upper()
+                    tiene_mtr = (tipo_precio == 'MTR')
+                    
+                    data['tiene_mtr'].append(tiene_mtr)
+                    
+                    # Precio Aura I (columna X = índice 23)
+                    precio_ai = str(row[23]).replace(',', '').strip()
+                    try:
+                        data['precios_ai'].append(float(precio_ai) if precio_ai and precio_ai != '' and precio_ai != '-' else 0)
+                    except:
+                        data['precios_ai'].append(0)
+                    
+                    # Precio Aura III (columna Y = índice 24)
+                    precio_aiii = str(row[24]).replace(',', '').strip()
+                    try:
+                        data['precios_aiii'].append(float(precio_aiii) if precio_aiii and precio_aiii != '' and precio_aiii != '-' else 0)
+                    except:
+                        data['precios_aiii'].append(0)
+                    
+                    # Producción Aura I (columna Z = índice 25)
+                    prod_ai = str(row[25]).replace(',', '').strip()
+                    try:
+                        data['produccion_ai'].append(float(prod_ai) if prod_ai and prod_ai != '' and prod_ai != '-' else 0)
+                    except:
+                        data['produccion_ai'].append(0)
+                    
+                    # Producción Aura III (columna AA = índice 26)
+                    prod_aiii = str(row[26]).replace(',', '').strip()
+                    try:
+                        data['produccion_aiii'].append(float(prod_aiii) if prod_aiii and prod_aiii != '' and prod_aiii != '-' else 0)
+                    except:
+                        data['produccion_aiii'].append(0)
+                    
+                    # Ingreso Aura I (columna AD = índice 29)
+                    ing_ai = str(row[29]).replace(',', '').strip()
+                    try:
+                        data['ingresos_ai'].append(float(ing_ai) if ing_ai and ing_ai != '' and ing_ai != '-' else 0)
+                    except:
+                        data['ingresos_ai'].append(0)
+                    
+                    # Ingreso Aura III (columna AE = índice 30)
+                    ing_aiii = str(row[30]).replace(',', '').strip()
+                    try:
+                        data['ingresos_aiii'].append(float(ing_aiii) if ing_aiii and ing_aiii != '' and ing_aiii != '-' else 0)
+                    except:
+                        data['ingresos_aiii'].append(0)
+        
+        return data
+        
+    except Exception as e:
+        import traceback
+        print(f"❌ Error loading daily data: {e}")
+        print(traceback.format_exc())
+        return None
+
+
+def create_daily_prices_chart(data):
+    """Crear gráfica de precios diarios con líneas para Aura I y Aura III.
+    Colores diferentes para MTR vs MDA."""
+    if not data or len(data['dias']) == 0:
+        return None
+    
+    fig = go.Figure()
+    
+    # Separar datos por tipo (MTR vs MDA)
+    dias_mtr = []
+    precios_ai_mtr = []
+    precios_aiii_mtr = []
+    
+    dias_mda = []
+    precios_ai_mda = []
+    precios_aiii_mda = []
+    
+    for i, dia in enumerate(data['dias']):
+        if data['tiene_mtr'][i]:
+            dias_mtr.append(dia)
+            precios_ai_mtr.append(data['precios_ai'][i])
+            precios_aiii_mtr.append(data['precios_aiii'][i])
+        else:
+            dias_mda.append(dia)
+            precios_ai_mda.append(data['precios_ai'][i])
+            precios_aiii_mda.append(data['precios_aiii'][i])
+    
+    # Líneas MDA Aura I - Azul claro
+    if dias_mda:
+        fig.add_trace(go.Scatter(
+            x=dias_mda,
+            y=precios_ai_mda,
+            name='Aura I (MDA)',
+            line=dict(color='#60a5fa', width=3),  # Azul claro
+            mode='lines+markers',
+            marker=dict(size=6)
+        ))
+    
+    # Líneas MDA Aura III - Verde claro
+    if dias_mda:
+        fig.add_trace(go.Scatter(
+            x=dias_mda,
+            y=precios_aiii_mda,
+            name='Aura III (MDA)',
+            line=dict(color='#4ade80', width=3),  # Verde claro
+            mode='lines+markers',
+            marker=dict(size=6)
+        ))
+    
+    # Líneas MTR Aura I - Azul oscuro
+    if dias_mtr:
+        fig.add_trace(go.Scatter(
+            x=dias_mtr,
+            y=precios_ai_mtr,
+            name='Aura I (MTR)',
+            line=dict(color='#1e40af', width=3),  # Azul oscuro
+            mode='lines+markers',
+            marker=dict(size=8, symbol='diamond')
+        ))
+    
+    # Líneas MTR Aura III - Verde oscuro
+    if dias_mtr:
+        fig.add_trace(go.Scatter(
+            x=dias_mtr,
+            y=precios_aiii_mtr,
+            name='Aura III (MTR)',
+            line=dict(color='#15803d', width=3),  # Verde oscuro
+            mode='lines+markers',
+            marker=dict(size=8, symbol='diamond')
+        ))
+    
+    fig.update_layout(
+        template='plotly_white',
+        paper_bgcolor='#ffffff',
+        plot_bgcolor='#ffffff',
+        height=400,
+        margin=dict(l=60, r=40, t=40, b=60),
+        hovermode='x unified',
+        showlegend=True,
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            xanchor="center",
+            x=0.5,
+            font=dict(color='#1e293b', size=13)
+        )
+    )
+    
+    fig.update_xaxes(
+        title_text="Día del Mes",
+        title_font=dict(color='#1e293b', size=13),
+        showgrid=True,
+        gridwidth=1,
+        gridcolor='rgba(226, 232, 240, 0.5)',
+        tickfont=dict(color='#1e293b', size=11),
+        type='category',
+        categoryorder='array',
+        categoryarray=data['dias']
+    )
+    
+    fig.update_yaxes(
+        title_text="Precio Promedio (MX$/MWh)",
+        title_font=dict(color='#1e293b', size=13),
+        showgrid=True,
+        gridwidth=1,
+        gridcolor='rgba(226, 232, 240, 0.5)',
+        tickfont=dict(color='#1e293b', size=11),
+        tickformat='$,.0f'
+    )
+    
+    return fig
+
+
+def create_daily_generation_chart(data):
+    """Crear gráfica de generación diaria con barras para Aura I y Aura III"""
+    if not data or len(data['dias']) == 0:
+        return None
+    
+    fig = go.Figure()
+    
+    # Barras Aura I
+    fig.add_trace(go.Bar(
+        x=data['dias'],
+        y=data['produccion_ai'],
+        name='Aura I',
+        marker_color='#10b981'
+    ))
+    
+    # Barras Aura III
+    fig.add_trace(go.Bar(
+        x=data['dias'],
+        y=data['produccion_aiii'],
+        name='Aura III',
+        marker_color='#f59e0b'
+    ))
+    
+    fig.update_layout(
+        template='plotly_white',
+        paper_bgcolor='#ffffff',
+        plot_bgcolor='#ffffff',
+        height=400,
+        margin=dict(l=60, r=40, t=40, b=60),
+        barmode='group',
+        showlegend=True,
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            xanchor="center",
+            x=0.5,
+            font=dict(color='#1e293b', size=13)
+        )
+    )
+    
+    fig.update_xaxes(
+        title_text="Día del Mes",
+        title_font=dict(color='#1e293b', size=13),
+        showgrid=True,
+        gridwidth=1,
+        gridcolor='rgba(226, 232, 240, 0.5)',
+        tickfont=dict(color='#1e293b', size=11),
+        type='category',
+        categoryorder='array',
+        categoryarray=data['dias']
+    )
+    
+    fig.update_yaxes(
+        title_text="Generación (MWh)",
+        title_font=dict(color='#1e293b', size=13),
+        showgrid=True,
+        gridwidth=1,
+        gridcolor='rgba(226, 232, 240, 0.5)',
+        tickfont=dict(color='#1e293b', size=11),
+        tickformat=',.0f'
+    )
+    
+    return fig
+
+
+def create_daily_revenue_chart(data):
+    """Crear gráfica de ingresos diarios con barras para Aura I y Aura III"""
+    if not data or len(data['dias']) == 0:
+        return None
+    
+    fig = go.Figure()
+    
+    # Barras Aura I
+    fig.add_trace(go.Bar(
+        x=data['dias'],
+        y=data['ingresos_ai'],
+        name='Aura I',
+        marker_color='#10b981'
+    ))
+    
+    # Barras Aura III
+    fig.add_trace(go.Bar(
+        x=data['dias'],
+        y=data['ingresos_aiii'],
+        name='Aura III',
+        marker_color='#f59e0b'
+    ))
+    
+    fig.update_layout(
+        template='plotly_white',
+        paper_bgcolor='#ffffff',
+        plot_bgcolor='#ffffff',
+        height=400,
+        margin=dict(l=60, r=40, t=40, b=60),
+        barmode='group',
+        showlegend=True,
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            xanchor="center",
+            x=0.5,
+            font=dict(color='#1e293b', size=13)
+        )
+    )
+    
+    fig.update_xaxes(
+        title_text="Día del Mes",
+        title_font=dict(color='#1e293b', size=13),
+        showgrid=True,
+        gridwidth=1,
+        gridcolor='rgba(226, 232, 240, 0.5)',
+        tickfont=dict(color='#1e293b', size=11),
+        type='category',
+        categoryorder='array',
+        categoryarray=data['dias']
+    )
+    
+    fig.update_yaxes(
+        title_text="Ingresos Diarios (MX$)",
+        title_font=dict(color='#1e293b', size=13),
+        showgrid=True,
+        gridwidth=1,
+        gridcolor='rgba(226, 232, 240, 0.5)',
+        tickfont=dict(color='#1e293b', size=11),
+        tickformat='$,.0f'
+    )
+    
+    return fig
+
+
+# =============================================================================
+# MAIN APP
 # =============================================================================
 def main():
     st.markdown(CUSTOM_CSS, unsafe_allow_html=True)
@@ -1864,6 +2270,39 @@ def main():
             st.plotly_chart(create_weekly_chart(weekly), use_container_width=True, config={'displayModeBar': False})
         else:
             st.info("Datos semanales no disponibles")
+    
+    # =========================================================================
+    # GRÁFICAS DIARIAS - ÚLTIMOS 30 DÍAS
+    # =========================================================================
+    st.markdown("---")
+    st.markdown('<div class="section-title">📊 Últimos 30 Días - Datos Diarios</div>', unsafe_allow_html=True)
+    
+    # Cargar datos diarios de últimos 30 días
+    daily_data_30 = get_last_30_days_data(client, SPREADSHEET_ID, selected_date)
+    
+    if daily_data_30 and len(daily_data_30['dias']) > 0:
+        # GRÁFICA 1: Precios Promedio Diarios
+        st.markdown("### 💵 Precios Promedio Diarios (PML)")
+        fig_precios = create_daily_prices_chart(daily_data_30)
+        if fig_precios:
+            st.plotly_chart(fig_precios, use_container_width=True, config={'displayModeBar': False}, key='daily_prices')
+        
+        # GRÁFICAS 2 y 3: Generación e Ingresos lado a lado
+        col_gen, col_ing = st.columns(2)
+        
+        with col_gen:
+            st.markdown("### ⚡ Generación Diaria (MWh)")
+            fig_gen = create_daily_generation_chart(daily_data_30)
+            if fig_gen:
+                st.plotly_chart(fig_gen, use_container_width=True, config={'displayModeBar': False}, key='daily_generation')
+        
+        with col_ing:
+            st.markdown("### 💰 Ingresos Diarios (MX$)")
+            fig_ing = create_daily_revenue_chart(daily_data_30)
+            if fig_ing:
+                st.plotly_chart(fig_ing, use_container_width=True, config={'displayModeBar': False}, key='daily_revenue')
+    else:
+        st.info("📅 No hay suficientes datos diarios disponibles para mostrar")
     
     # ROW 3 - PMLs BCS y New Fortress
     st.markdown('<div class="section-title">🌊 PMLs BCS y New Fortress (Últimos 15 días)</div>', unsafe_allow_html=True)
